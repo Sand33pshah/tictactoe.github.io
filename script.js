@@ -41,8 +41,8 @@ function reset() {
         cell.innerHTML = '';
     }
 
-    currentPlayer = 'X';
-    document.getElementById('currPlayer').innerHTML = 'Current Player: ' + currentPlayer;
+    // currentPlayer = 'X';
+    // document.getElementById('currPlayer').innerHTML = 'Current Player: ' + currentPlayer;
     console.log('Game Reset');
 }
 
