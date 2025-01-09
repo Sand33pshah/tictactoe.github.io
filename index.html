@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>TIC TAC TOE</h1>
+    <div class="welcome">
+        <p>Select your Opponent:
+            <select name="multiplayer" id="multiplayer" onchange="playerMode()">
+                <option value="computer">Computer</option>
+                <option value="human" selected>Human</option>
+            </select>
+        </p>
+        <input type="text" class="inputName" placeholder="Player 1" id="playerOne">
+        <input type="text" class="inputName secBtn" placeholder="Player 2" id="playerTwo">
+        <button class="btn" onclick="startNow()">&#x2192</button>
+    </div>
+    <div class="gameFloor">
+        <span id="currPlayer"></span>
+        <div class="board">
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div> 
+            <div class="cell" onclick="makeMove(this)"></div>
+        </div>
+
+
+        <div class="navigation">
+            <button class="navBtn" onclick="goBack()"><</button>
+            <button class="navBtn" onclick="reset()">&#8635;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

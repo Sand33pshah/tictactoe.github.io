@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    color: purple;
+}
+.welcome{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1rem;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 12px purple;
+}
+
+.welcome p select{
+    border: none;
+    padding:2px 2px 2px 20px;
+    border-bottom: 2px solid purple;
+    font-size: 1rem;
+    outline: none;
+}
+.inputName{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid purple;
+    color: purple;
+    font-size: 1.7rem;
+    font-weight: bold;
+    outline: none;
+}
+.inputName::placeholder{
+    color: rgb(105, 28, 105);
+    opacity: 0.2;
+    font-weight: 100;
+}
+
+.secBtn{
+    display: block;
+}
+
+.btn{
+    display: block;
+    background-color: purple;
+    color: white;
+    padding: 10px 60px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+.btn:hover {
+    transform: translateX(12px);
+}
+
+
+.welcome{
+    display: flex;
+}
+
+.gameFloor{
+    margin-top: 2rem;
+    display: none;
+}
+
+#currPlayer {
+    margin-top: 6rem;
+    color: orange;
+}
+
+.board {
+    margin-top: 3rem;
+    display: grid; 
+    grid-template-columns: repeat(3, 100px); 
+    grid-template-rows: repeat(3, 100px); 
+    gap: 15px; 
+} 
+.cell { 
+    width: 100px; 
+    height: 100px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 4rem;
+    box-shadow: 2px 2px 15px purple;
+    border-radius: 10px;
+    cursor: pointer; 
+}
+
+.navigation{
+    margin-top: 2rem;
+    padding: 5px 40px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBtn{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    border: none;
+    background-color: purple;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.navBtn:hover {
+    transform: scale(0.9);
+    box-shadow: 4px 2px 10px rgb(73, 4, 73);
+}
+
+
+
+
+@media screen and (max-width: 600px)  {
+    h1{
+        margin-top: 4rem;
+    }
+
+    .inputName{
+    font-size: 1.2rem;
+    }
+
+    .board {
+        margin-top: 3rem;
+    }
+}
