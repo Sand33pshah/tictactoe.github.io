@@ -1,3 +1,8 @@
+let currentPlayer = 'X';
+let playerOneName = 'X';
+let PlayerTwoName = 'O';
+
+
 function playerMode(){
     const mode = document.getElementById('multiplayer').value;
     const playerTwo = document.getElementById('playerTwo');
@@ -11,27 +16,36 @@ function playerMode(){
         playerTwo.style.display = 'block';
         playerOne.placeholder = 'Player 1';
     }
-    console.log(mode);
+    // console.log(mode);
 }
 
 function startNow() {
+    const playerOneInput = document.getElementById('playerOne').value;
+    const playerTwoInput = document.getElementById('playerTwo').value;
+
+    playerOneName = playerOneInput ? playerOneInput : 'X';
+    PlayerTwoName = playerTwoInput ? playerTwoInput : 'O';
+
+    document.getElementById('currPlayer').innerHTML = 'Current Player: ' + playerOneName;
+
     document.getElementsByClassName('welcome')[0].style.display = 'none';
     document.getElementsByClassName('gameFloor')[0].style.display = 'block';
-    console.log('Game On');
+    reset();
+    // console.log('Game On');
 }
 
 
-let currentPlayer = 'X'; 
+// let currentPlayer = 'X'; 
 function makeMove(cell) { 
     if (cell.innerHTML === '') { 
         cell.innerHTML = currentPlayer;
         if(checkWinner()){
             setTimeout(() => {
-                alert(currentPlayer + ' wins !');
+                alert((currentPlayer === 'X' ? playerOneName : PlayerTwoName) + ' wins !');
             }, 200);
         } else{
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            document.getElementById('currPlayer').innerHTML = 'Current Player: ' + currentPlayer;
+            document.getElementById('currPlayer').innerHTML = 'Current Player: ' + (currentPlayer === 'X' ? playerOneName : PlayerTwoName);
         } 
     } 
 }
@@ -83,7 +97,7 @@ function reset() {
     }
 
     currentPlayer = 'X';
-    // document.getElementById('currPlayer').innerHTML = 'Current Player: ' + currentPlayer;
+    document.getElementById('currPlayer').innerHTML = 'Current Player: ' + (currentPlayer === 'X' ? playerOneName : PlayerTwoName);
     console.log('Game Reset');
 }
 
