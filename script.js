@@ -26,9 +26,9 @@ function makeMove(cell) {
     if (cell.innerHTML === '') { 
         cell.innerHTML = currentPlayer;
         if(checkWinner()){
-            // currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            alert(currentPlayer + ' wins !');
-            // reset();
+            setTimeout(() => {
+                alert(currentPlayer + ' wins !');
+            }, 200);
         } else{
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
             document.getElementById('currPlayer').innerHTML = 'Current Player: ' + currentPlayer;
