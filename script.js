@@ -20,6 +20,7 @@ function startNow() {
     console.log('Game On');
 }
 
+
 let currentPlayer = 'X'; 
 function makeMove(cell) { 
     if (cell.innerHTML === '') { 
@@ -34,11 +35,15 @@ function goBack() {
     console.log('Game On');
 }
 
-// function reset() {
-//     const allCell = document.getElementsByClassName('cell');
-//     for(const cell of allCell) {
-//         cell.innerHTML = '';
-//     }
-// }
+function reset() {
+    const allCell = document.getElementsByClassName('cell');
+    for(const cell of allCell) {
+        cell.innerHTML = '';
+    }
+
+    currentPlayer = 'X';
+    document.getElementById('currPlayer').innerHTML = 'Current Player: ' + currentPlayer;
+    console.log('Game Reset');
+}
 
 
